@@ -1,0 +1,21 @@
+#! /bin/bash
+
+# print a integer while called, plus 1 after running
+
+
+if test -s tally.txt         #如果存数文件存在且不为空
+then
+    tally=$(cat tally.txt)   # tally 等于存数文件中的值
+    # $tally < tally.txt --> 这个不运行
+    # echo  "A tally.txt exsit and != null" 
+    # echo "tally if true $tally"  
+else
+    tally=1
+    #echo $tally
+    #echo "B tally.txt not exsist and tally = 1"
+fi
+
+echo $tally  # print tally
+
+echo $(expr $tally + 1) >tally.txt     # tally +1把新的值存进存数文件
+# echo "C tally += 1 and add the output to tally.txt"

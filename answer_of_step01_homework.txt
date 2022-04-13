@@ -1,0 +1,37 @@
+md5sum
+
+
+diff 
+
+
+vim bashrc
+function odd-or-even(){
+    num=$1
+    result=$(expr $num % 2 2>/dev/null)
+    if [[ $result == 0 ]]
+    then 
+        echo "The num is even"
+    elif 
+        [[ $result == 1 ]]
+    then
+        echo "The num is odd"
+    else
+        echo "This is not an integer"
+    fi
+source ./bashrc
+
+
+#print the number of calling the function 
+if test -s tally.txt 
+then
+  tally=$(cat tally.txt)   # tally 等于存数文件中的值
+else
+  tally=1
+fi
+echo $tally  # print tally
+echo $(expr $tally + 1) >tally.txt    
+
+
+
+# sum the number in a file 
+awk '{n += $1}; END{print n}' file.txt
